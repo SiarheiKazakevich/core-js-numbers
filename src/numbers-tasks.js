@@ -53,13 +53,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  if (typeof value1 === 'number' && typeof value2 === 'number') {
-    if (Number.isFinite(value1) && Number.isFinite(value2)) {
-      return (value1 + value2) / 2;
-    }
-    return 'Please provide valid finite numbers for the values.';
-  }
-  return 'Please provide valid numbers for the values.';
+  return value1 / 2 + value2 / 2;
 }
 
 /**
