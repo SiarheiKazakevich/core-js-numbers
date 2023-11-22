@@ -109,7 +109,14 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return Math.atan2(y2 - y1, x2 - x1);
+  const dotProduct = x1 * x2 + y1 * y2;
+  const magnitude1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const magnitude2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+
+  const cosineAngle = dotProduct / (magnitude1 * magnitude2);
+  const angleInRadians = Math.acos(cosineAngle);
+
+  return angleInRadians;
 }
 
 /**
@@ -126,7 +133,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return value.toString().charAt(value.toString().length - 1);
+  return value % 10;
 }
 
 /**
